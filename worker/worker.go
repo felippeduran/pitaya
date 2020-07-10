@@ -28,8 +28,8 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/topfreegames/pitaya/config"
 	"github.com/topfreegames/pitaya/constants"
+	"github.com/topfreegames/pitaya/interfaces/logging"
 	"github.com/topfreegames/pitaya/logger"
-	"github.com/topfreegames/pitaya/logger/interfaces"
 
 	workers "github.com/topfreegames/go-workers"
 )
@@ -66,7 +66,7 @@ func NewWorker(config *config.Config) (*Worker, error) {
 }
 
 // SetLogger overwrites worker logger
-func (w *Worker) SetLogger(logger interfaces.Logger) {
+func (w *Worker) SetLogger(logger logging.Logger) {
 	workers.Logger = logger
 }
 

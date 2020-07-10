@@ -2,26 +2,26 @@ package logrus
 
 import (
 	"github.com/sirupsen/logrus"
-	"github.com/topfreegames/pitaya/logger/interfaces"
+	"github.com/topfreegames/pitaya/interfaces/logging"
 )
 
 type logrusImpl struct {
 	impl *logrus.Entry
 }
 
-// New returns a new interfaces.Logger implementation based on logrus
-func New() interfaces.Logger {
+// New returns a new logging.Logger implementation based on logrus
+func New() logging.Logger {
 	log := logrus.New()
 	return NewWithLogger(log)
 }
 
-// NewWithEntry returns a new interfaces.Logger implementation based on a provided logrus entry instance
-func NewWithEntry(logger *logrus.Entry) interfaces.Logger {
+// NewWithEntry returns a new logging.Logger implementation based on a provided logrus entry instance
+func NewWithEntry(logger *logrus.Entry) logging.Logger {
 	return &logrusImpl{impl: logger}
 }
 
-// NewWithLogger returns a new interfaces.Logger implementation based on a provided logrus instance
-func NewWithLogger(logger *logrus.Logger) interfaces.Logger {
+// NewWithLogger returns a new logging.Logger implementation based on a provided logrus instance
+func NewWithLogger(logger *logrus.Logger) logging.Logger {
 	return &logrusImpl{impl: logrus.NewEntry(logger)}
 }
 
@@ -85,14 +85,14 @@ func (l *logrusImpl) Warnln(args ...interface{}) {
 	l.impl.Warnln(args...)
 }
 
-func (l *logrusImpl) WithFields(fields map[string]interface{}) interfaces.Logger {
+func (l *logrusImpl) WithFields(fields map[string]interface{}) logging.Logger {
 	return &logrusImpl{impl: l.impl.WithFields(fields)}
 
 }
-func (l *logrusImpl) WithField(key string, value interface{}) interfaces.Logger {
+func (l *logrusImpl) WithField(key string, value interface{}) logging.Logger {
 	return &logrusImpl{impl: l.impl.WithField(key, value)}
 }
 
-func (l *logrusImpl) WithError(err error) interfaces.Logger {
+func (l *logrusImpl) WithError(err error) logging.Logger {
 	return &logrusImpl{impl: l.impl.WithError(err)}
 }

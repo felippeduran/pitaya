@@ -22,14 +22,14 @@ package logger
 
 import (
 	"github.com/sirupsen/logrus"
-	"github.com/topfreegames/pitaya/logger/interfaces"
+	"github.com/topfreegames/pitaya/interfaces/logging"
 	logruswrapper "github.com/topfreegames/pitaya/logger/logrus"
 )
 
 // Log is the default logger
 var Log = initLogger()
 
-func initLogger() interfaces.Logger {
+func initLogger() logging.Logger {
 	plog := logrus.New()
 	plog.Formatter = new(logrus.TextFormatter)
 	plog.Level = logrus.DebugLevel
@@ -41,7 +41,7 @@ func initLogger() interfaces.Logger {
 }
 
 // SetLogger rewrites the default logger
-func SetLogger(l interfaces.Logger) {
+func SetLogger(l logging.Logger) {
 	if l != nil {
 		Log = l
 	}

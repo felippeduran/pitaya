@@ -32,8 +32,8 @@ import (
 	"github.com/topfreegames/pitaya/constants"
 	pcontext "github.com/topfreegames/pitaya/context"
 	e "github.com/topfreegames/pitaya/errors"
+	"github.com/topfreegames/pitaya/interfaces/logging"
 	"github.com/topfreegames/pitaya/logger"
-	"github.com/topfreegames/pitaya/logger/interfaces"
 	"github.com/topfreegames/pitaya/protos"
 	"github.com/topfreegames/pitaya/serialize"
 	"github.com/topfreegames/pitaya/serialize/json"
@@ -44,7 +44,7 @@ import (
 	opentracing "github.com/opentracing/opentracing-go"
 )
 
-func getLoggerFromArgs(args []reflect.Value) interfaces.Logger {
+func getLoggerFromArgs(args []reflect.Value) logging.Logger {
 	for _, a := range args {
 		if !a.IsValid() {
 			continue
@@ -52,7 +52,7 @@ func getLoggerFromArgs(args []reflect.Value) interfaces.Logger {
 		if ctx, ok := a.Interface().(context.Context); ok {
 			logVal := ctx.Value(constants.LoggerCtxKey)
 			if logVal != nil {
-				log := logVal.(interfaces.Logger)
+				log := logVal.(logging.Logger)
 				return log
 			}
 		}
