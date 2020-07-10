@@ -42,6 +42,7 @@ import (
 	pcontext "github.com/topfreegames/pitaya/context"
 	"github.com/topfreegames/pitaya/docgenerator"
 	"github.com/topfreegames/pitaya/errors"
+	"github.com/topfreegames/pitaya/groups"
 	"github.com/topfreegames/pitaya/interfaces"
 	"github.com/topfreegames/pitaya/interfaces/logging"
 	"github.com/topfreegames/pitaya/logger"
@@ -151,6 +152,7 @@ type App struct {
 	remoteComp       []regComp
 	modulesMap       map[string]interfaces.Module
 	modulesArr       []moduleWrapper
+	groups           groups.GroupService
 }
 
 // NewApp is the base constructor for a pitaya app instance
@@ -167,6 +169,7 @@ func NewApp(
 	serviceDiscovery cluster.ServiceDiscovery,
 	remoteService *service.RemoteService,
 	handlerService *service.HandlerService,
+	groups groups.GroupService,
 	metricsReporters []metrics.Reporter,
 	cfgs ...*viper.Viper,
 ) *App {
@@ -178,6 +181,7 @@ func NewApp(
 		serviceDiscovery: serviceDiscovery,
 		remoteService:    remoteService,
 		handlerService:   handlerService,
+		groups:           groups,
 		debug:            false,
 		startAt:          time.Now(),
 		dieChan:          dieChan,
