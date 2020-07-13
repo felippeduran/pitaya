@@ -81,6 +81,7 @@ type Pitaya interface {
 	GetServerByID(id string) (*cluster.Server, error)
 	GetServersByType(t string) (map[string]*cluster.Server, error)
 	GetServers() []*cluster.Server
+	GetSessionFromCtx(ctx context.Context) session.Session
 	Start()
 	SetDictionary(dict map[string]uint16) error
 	AddRoute(serverType string, routingFunction router.RoutingFunc) error
@@ -134,7 +135,7 @@ type App struct {
 	debug            bool
 	dieChan          chan bool
 	heartbeat        time.Duration
-	onSessionBind    func(*session.Session)
+	onSessionBind    func(session.Session)
 	router           *router.Router
 	rpcClient        cluster.RPCClient
 	rpcServer        cluster.RPCServer
@@ -153,6 +154,7 @@ type App struct {
 	modulesMap       map[string]interfaces.Module
 	modulesArr       []moduleWrapper
 	groups           groups.GroupService
+	sessionPool      session.SessionPool
 }
 
 // NewApp is the base constructor for a pitaya app instance
@@ -170,6 +172,7 @@ func NewApp(
 	remoteService *service.RemoteService,
 	handlerService *service.HandlerService,
 	groups groups.GroupService,
+	sessionPool session.SessionPool,
 	metricsReporters []metrics.Reporter,
 	cfgs ...*viper.Viper,
 ) *App {
@@ -195,7 +198,7 @@ func NewApp(
 		remoteComp:       make([]regComp, 0),
 		modulesMap:       make(map[string]interfaces.Module),
 		modulesArr:       []moduleWrapper{},
-		// handlerHooks:     pipeline.NewHandlerHooks(),
+		sessionPool:      sessionPool,
 	}
 	app.config = config.NewConfig(cfgs...)
 	if app.heartbeat == time.Duration(0) {
@@ -267,7 +270,7 @@ func (app *App) AddMetricsReporter(mr metrics.Reporter) {
 }
 
 func (app *App) initSysRemotes() {
-	sys := &remote.Sys{}
+	sys := remote.NewSys(app.sessionPool)
 	app.RegisterRemote(sys,
 		component.WithName("sys"),
 		component.WithNameFunc(strings.ToLower),
@@ -335,7 +338,7 @@ func (app *App) Start() {
 
 	logger.Log.Warn("server is stopping...")
 
-	session.CloseAll()
+	app.sessionPool.CloseAll()
 	app.shutdownModules()
 	app.shutdownComponents()
 }
@@ -366,7 +369,7 @@ func (app *App) listen() {
 	}
 
 	if app.serverMode == Cluster && app.server.Frontend && app.config.GetBool("pitaya.session.unique") {
-		unique := mods.NewUniqueSession(app.server, app.rpcServer, app.rpcClient)
+		unique := mods.NewUniqueSession(app.server, app.rpcServer, app.rpcClient, app.sessionPool)
 		app.remoteService.AddRemoteBindingListener(unique)
 		app.RegisterModule(unique, "uniqueSession")
 	}
@@ -417,13 +420,13 @@ func Error(err error, code string, metadata ...map[string]string) *errors.Error 
 }
 
 // GetSessionFromCtx retrieves a session from a given context
-func GetSessionFromCtx(ctx context.Context) *session.Session {
+func (app *App) GetSessionFromCtx(ctx context.Context) session.Session {
 	sessionVal := ctx.Value(constants.SessionCtxKey)
 	if sessionVal == nil {
 		logger.Log.Debug("ctx doesn't contain a session, are you calling GetSessionFromCtx from inside a remote?")
 		return nil
 	}
-	return sessionVal.(*session.Session)
+	return sessionVal.(session.Session)
 }
 
 // GetDefaultLoggerFromCtx returns the default logger from the given context
