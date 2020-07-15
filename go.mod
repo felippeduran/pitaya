@@ -1,4 +1,4 @@
-module github.com/felippeduran/pitaya/v2
+module github.com/felippeduran/pitaya
 
 go 1.12
 
