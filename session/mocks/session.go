@@ -6,10 +6,10 @@ package mocks
 
 import (
 	context "context"
+	networkentity "github.com/felippeduran/pitaya/v2/networkentity"
+	session "github.com/felippeduran/pitaya/v2/session"
 	gomock "github.com/golang/mock/gomock"
 	nats_go "github.com/nats-io/nats.go"
-	networkentity "github.com/topfreegames/pitaya/v2/networkentity"
-	session "github.com/topfreegames/pitaya/v2/session"
 	net "net"
 	reflect "reflect"
 )

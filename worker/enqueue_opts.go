@@ -20,7 +20,7 @@
 
 package worker
 
-import "github.com/topfreegames/pitaya/v2/config"
+import "github.com/felippeduran/pitaya/v2/config"
 
 // EnqueueOpts has retry options for worker
 type EnqueueOpts struct {

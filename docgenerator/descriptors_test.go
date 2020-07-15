@@ -3,9 +3,9 @@ package docgenerator
 import (
 	"testing"
 
+	"github.com/felippeduran/pitaya/v2/constants"
+	_ "github.com/felippeduran/pitaya/v2/protos"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/v2/constants"
-	_ "github.com/topfreegames/pitaya/v2/protos"
 )
 
 func TestProtoDescriptors(t *testing.T) {

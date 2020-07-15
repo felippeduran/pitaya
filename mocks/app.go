@@ -6,15 +6,15 @@ package mocks
 
 import (
 	context "context"
+	cluster "github.com/felippeduran/pitaya/v2/cluster"
+	component "github.com/felippeduran/pitaya/v2/component"
+	interfaces "github.com/felippeduran/pitaya/v2/interfaces"
+	metrics "github.com/felippeduran/pitaya/v2/metrics"
+	router "github.com/felippeduran/pitaya/v2/router"
+	session "github.com/felippeduran/pitaya/v2/session"
+	worker "github.com/felippeduran/pitaya/v2/worker"
 	gomock "github.com/golang/mock/gomock"
 	proto "github.com/golang/protobuf/proto"
-	cluster "github.com/topfreegames/pitaya/v2/cluster"
-	component "github.com/topfreegames/pitaya/v2/component"
-	interfaces "github.com/topfreegames/pitaya/v2/interfaces"
-	metrics "github.com/topfreegames/pitaya/v2/metrics"
-	router "github.com/topfreegames/pitaya/v2/router"
-	session "github.com/topfreegames/pitaya/v2/session"
-	worker "github.com/topfreegames/pitaya/v2/worker"
 	reflect "reflect"
 	time "time"
 )

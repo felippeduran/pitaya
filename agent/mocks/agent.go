@@ -6,10 +6,10 @@ package mocks
 
 import (
 	context "context"
+	agent "github.com/felippeduran/pitaya/v2/agent"
+	protos "github.com/felippeduran/pitaya/v2/protos"
+	session "github.com/felippeduran/pitaya/v2/session"
 	gomock "github.com/golang/mock/gomock"
-	agent "github.com/topfreegames/pitaya/v2/agent"
-	protos "github.com/topfreegames/pitaya/v2/protos"
-	session "github.com/topfreegames/pitaya/v2/session"
 	net "net"
 	reflect "reflect"
 )

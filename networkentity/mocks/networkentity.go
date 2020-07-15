@@ -6,8 +6,8 @@ package mocks
 
 import (
 	context "context"
+	protos "github.com/felippeduran/pitaya/v2/protos"
 	gomock "github.com/golang/mock/gomock"
-	protos "github.com/topfreegames/pitaya/v2/protos"
 	net "net"
 	reflect "reflect"
 )

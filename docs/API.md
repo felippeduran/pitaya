@@ -51,8 +51,8 @@ Below is a very barebones example of a handler definition, for a complete workin
 
 ```go
 import (
-  "github.com/topfreegames/pitaya/v2"
-  "github.com/topfreegames/pitaya/v2/component"
+  "github.com/felippeduran/pitaya/v2"
+  "github.com/felippeduran/pitaya/v2/component"
 )
 
 type Handler struct {

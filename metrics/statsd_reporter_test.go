@@ -26,10 +26,10 @@ import (
 	"testing"
 	"time"
 
+	metricsmocks "github.com/felippeduran/pitaya/v2/metrics/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
-	metricsmocks "github.com/topfreegames/pitaya/v2/metrics/mocks"
 )
 
 func TestNewStatsdReporter(t *testing.T) {

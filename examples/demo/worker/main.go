@@ -6,12 +6,12 @@ import (
 
 	"strings"
 
+	"github.com/felippeduran/pitaya/v2"
+	"github.com/felippeduran/pitaya/v2/acceptor"
+	"github.com/felippeduran/pitaya/v2/component"
+	"github.com/felippeduran/pitaya/v2/config"
+	"github.com/felippeduran/pitaya/v2/examples/demo/worker/services"
 	"github.com/spf13/viper"
-	"github.com/topfreegames/pitaya/v2"
-	"github.com/topfreegames/pitaya/v2/acceptor"
-	"github.com/topfreegames/pitaya/v2/component"
-	"github.com/topfreegames/pitaya/v2/config"
-	"github.com/topfreegames/pitaya/v2/examples/demo/worker/services"
 )
 
 var app pitaya.Pitaya

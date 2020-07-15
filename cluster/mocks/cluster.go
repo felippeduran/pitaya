@@ -6,12 +6,12 @@ package mocks
 
 import (
 	context "context"
+	cluster "github.com/felippeduran/pitaya/v2/cluster"
+	message "github.com/felippeduran/pitaya/v2/conn/message"
+	protos "github.com/felippeduran/pitaya/v2/protos"
+	route "github.com/felippeduran/pitaya/v2/route"
+	session "github.com/felippeduran/pitaya/v2/session"
 	gomock "github.com/golang/mock/gomock"
-	cluster "github.com/topfreegames/pitaya/v2/cluster"
-	message "github.com/topfreegames/pitaya/v2/conn/message"
-	protos "github.com/topfreegames/pitaya/v2/protos"
-	route "github.com/topfreegames/pitaya/v2/route"
-	session "github.com/topfreegames/pitaya/v2/session"
 	reflect "reflect"
 )
 
