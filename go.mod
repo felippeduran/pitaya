@@ -1,4 +1,4 @@
-module github.com/topfreegames/pitaya
+module github.com/topfreegames/pitaya/v2
 
 go 1.12
 
@@ -62,6 +62,7 @@ require (
 	github.com/stretchr/testify v1.3.0
 	github.com/tmc/grpc-websocket-proxy v0.0.0-20171017195756-830351dc03c6 // indirect
 	github.com/topfreegames/go-workers v1.0.0
+	github.com/topfreegames/pitaya v1.1.1
 	github.com/uber-go/atomic v1.3.2 // indirect
 	github.com/uber/jaeger-client-go v2.13.0+incompatible
 	github.com/uber/jaeger-lib v1.4.0 // indirect

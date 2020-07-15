@@ -8,8 +8,8 @@ import (
 	context "context"
 	gomock "github.com/golang/mock/gomock"
 	nats_go "github.com/nats-io/nats.go"
-	networkentity "github.com/topfreegames/pitaya/networkentity"
-	session "github.com/topfreegames/pitaya/session"
+	networkentity "github.com/topfreegames/pitaya/v2/networkentity"
+	session "github.com/topfreegames/pitaya/v2/session"
 	net "net"
 	reflect "reflect"
 )
