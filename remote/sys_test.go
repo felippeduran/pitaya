@@ -24,12 +24,12 @@ import (
 	"encoding/json"
 	"testing"
 
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	protos "github.com/felippeduran/pitaya/v2/protos"
+	"github.com/felippeduran/pitaya/v2/session/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/protos"
-	"github.com/topfreegames/pitaya/session/mocks"
 )
 
 func TestBindSession(t *testing.T) {

@@ -25,8 +25,8 @@ import (
 	"os"
 	"testing"
 
+	client "github.com/felippeduran/pitaya/v2/client"
 	"github.com/sirupsen/logrus"
-	"github.com/topfreegames/pitaya/client"
 )
 
 var clients []*client.Client

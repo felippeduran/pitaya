@@ -23,10 +23,10 @@ package tracing
 import (
 	"context"
 
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	pcontext "github.com/felippeduran/pitaya/v2/context"
+	logger "github.com/felippeduran/pitaya/v2/logger"
 	opentracing "github.com/opentracing/opentracing-go"
-	"github.com/topfreegames/pitaya/constants"
-	pcontext "github.com/topfreegames/pitaya/context"
-	"github.com/topfreegames/pitaya/logger"
 )
 
 func castValueToCarrier(val interface{}) (opentracing.TextMapCarrier, error) {

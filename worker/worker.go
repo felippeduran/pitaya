@@ -25,11 +25,11 @@ import (
 	"encoding/json"
 	"os"
 
+	config "github.com/felippeduran/pitaya/v2/config"
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	logger "github.com/felippeduran/pitaya/v2/logger"
+	"github.com/felippeduran/pitaya/v2/logger/interfaces"
 	"github.com/golang/protobuf/proto"
-	"github.com/topfreegames/pitaya/config"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/logger"
-	"github.com/topfreegames/pitaya/logger/interfaces"
 
 	workers "github.com/topfreegames/go-workers"
 )

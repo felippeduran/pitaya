@@ -23,10 +23,10 @@ package acceptorwrapper
 import (
 	"time"
 
-	"github.com/topfreegames/pitaya"
+	"github.com/felippeduran/pitaya/v2"
 
-	"github.com/topfreegames/pitaya/acceptor"
-	"github.com/topfreegames/pitaya/config"
+	acceptor "github.com/felippeduran/pitaya/v2/acceptor"
+	config "github.com/felippeduran/pitaya/v2/config"
 )
 
 // RateLimitingWrapper rate limits for each connection

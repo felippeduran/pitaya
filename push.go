@@ -21,11 +21,11 @@
 package pitaya
 
 import (
-	"github.com/topfreegames/pitaya/cluster"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/logger"
-	"github.com/topfreegames/pitaya/protos"
-	"github.com/topfreegames/pitaya/util"
+	cluster "github.com/felippeduran/pitaya/v2/cluster"
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	logger "github.com/felippeduran/pitaya/v2/logger"
+	protos "github.com/felippeduran/pitaya/v2/protos"
+	util "github.com/felippeduran/pitaya/v2/util"
 )
 
 // SendPushToUsers sends a message to the given list of users

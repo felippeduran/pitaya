@@ -5,8 +5,8 @@
 package mocks
 
 import (
+	packet "github.com/felippeduran/pitaya/v2/conn/packet"
 	gomock "github.com/golang/mock/gomock"
-	packet "github.com/topfreegames/pitaya/conn/packet"
 	reflect "reflect"
 )
 

@@ -24,10 +24,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/felippeduran/pitaya/v2/metrics"
+	"github.com/felippeduran/pitaya/v2/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/metrics"
-	"github.com/topfreegames/pitaya/mocks"
 )
 
 func TestNewRateLimitingWrapper(t *testing.T) {

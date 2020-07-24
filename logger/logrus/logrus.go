@@ -1,8 +1,8 @@
 package logrus
 
 import (
+	"github.com/felippeduran/pitaya/v2/logger/interfaces"
 	"github.com/sirupsen/logrus"
-	"github.com/topfreegames/pitaya/logger/interfaces"
 )
 
 type logrusImpl struct {

@@ -24,10 +24,10 @@ import (
 	"context"
 	"testing"
 
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	"github.com/felippeduran/pitaya/v2/session/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/session/mocks"
 )
 
 func createGroupTestApp() Pitaya {

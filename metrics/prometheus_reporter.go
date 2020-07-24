@@ -26,10 +26,10 @@ import (
 	"net/http"
 	"sync"
 
+	config "github.com/felippeduran/pitaya/v2/config"
+	constants "github.com/felippeduran/pitaya/v2/constants"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/topfreegames/pitaya/config"
-	"github.com/topfreegames/pitaya/constants"
 )
 
 var (

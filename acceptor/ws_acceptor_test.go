@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/felippeduran/pitaya/v2/conn/packet"
+	"github.com/felippeduran/pitaya/v2/constants"
+	"github.com/felippeduran/pitaya/v2/helpers"
 	"github.com/gorilla/websocket"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/conn/packet"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/helpers"
 )
 
 var wsAcceptorTables = []struct {

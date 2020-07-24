@@ -30,31 +30,31 @@ import (
 
 	"time"
 
+	acceptor "github.com/felippeduran/pitaya/v2/acceptor"
+	cluster "github.com/felippeduran/pitaya/v2/cluster"
+	component "github.com/felippeduran/pitaya/v2/component"
+	config "github.com/felippeduran/pitaya/v2/config"
+	"github.com/felippeduran/pitaya/v2/conn/message"
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	pcontext "github.com/felippeduran/pitaya/v2/context"
+	docgenerator "github.com/felippeduran/pitaya/v2/docgenerator"
+	errors "github.com/felippeduran/pitaya/v2/errors"
+	groups "github.com/felippeduran/pitaya/v2/groups"
+	"github.com/felippeduran/pitaya/v2/interfaces"
+	logger "github.com/felippeduran/pitaya/v2/logger"
+	logging "github.com/felippeduran/pitaya/v2/logger/interfaces"
+	metrics "github.com/felippeduran/pitaya/v2/metrics"
+	mods "github.com/felippeduran/pitaya/v2/modules"
+	remote "github.com/felippeduran/pitaya/v2/remote"
+	router "github.com/felippeduran/pitaya/v2/router"
+	serialize "github.com/felippeduran/pitaya/v2/serialize"
+	service "github.com/felippeduran/pitaya/v2/service"
+	session "github.com/felippeduran/pitaya/v2/session"
+	timer "github.com/felippeduran/pitaya/v2/timer"
+	tracing "github.com/felippeduran/pitaya/v2/tracing"
+	worker "github.com/felippeduran/pitaya/v2/worker"
 	"github.com/golang/protobuf/proto"
 	opentracing "github.com/opentracing/opentracing-go"
-	"github.com/topfreegames/pitaya/acceptor"
-	"github.com/topfreegames/pitaya/cluster"
-	"github.com/topfreegames/pitaya/component"
-	"github.com/topfreegames/pitaya/config"
-	"github.com/topfreegames/pitaya/conn/message"
-	"github.com/topfreegames/pitaya/constants"
-	pcontext "github.com/topfreegames/pitaya/context"
-	"github.com/topfreegames/pitaya/docgenerator"
-	"github.com/topfreegames/pitaya/errors"
-	"github.com/topfreegames/pitaya/groups"
-	"github.com/topfreegames/pitaya/interfaces"
-	"github.com/topfreegames/pitaya/logger"
-	"github.com/topfreegames/pitaya/logger/interfaces"
-	"github.com/topfreegames/pitaya/metrics"
-	mods "github.com/topfreegames/pitaya/modules"
-	"github.com/topfreegames/pitaya/remote"
-	"github.com/topfreegames/pitaya/router"
-	"github.com/topfreegames/pitaya/serialize"
-	"github.com/topfreegames/pitaya/service"
-	"github.com/topfreegames/pitaya/session"
-	"github.com/topfreegames/pitaya/timer"
-	"github.com/topfreegames/pitaya/tracing"
-	"github.com/topfreegames/pitaya/worker"
 )
 
 // ServerMode represents a server mode
@@ -263,7 +263,7 @@ func (app *App) SetHeartbeatTime(interval time.Duration) {
 }
 
 // SetLogger logger setter
-func SetLogger(l interfaces.Logger) {
+func SetLogger(l logging.Logger) {
 	logger.Log = l
 }
 
@@ -463,13 +463,13 @@ func (app *App) GetSessionFromCtx(ctx context.Context) session.Session {
 }
 
 // GetDefaultLoggerFromCtx returns the default logger from the given context
-func GetDefaultLoggerFromCtx(ctx context.Context) interfaces.Logger {
+func GetDefaultLoggerFromCtx(ctx context.Context) logging.Logger {
 	l := ctx.Value(constants.LoggerCtxKey)
 	if l == nil {
 		return logger.Log
 	}
 
-	return l.(interfaces.Logger)
+	return l.(logging.Logger)
 }
 
 // AddMetricTagsToPropagateCtx adds a key and metric tags that will

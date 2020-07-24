@@ -23,8 +23,8 @@ package pitaya
 import (
 	"testing"
 
+	"github.com/felippeduran/pitaya/v2/component"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/component"
 )
 
 type MyComp struct {

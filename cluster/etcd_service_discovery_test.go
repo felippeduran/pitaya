@@ -27,9 +27,9 @@ import (
 	"time"
 
 	"github.com/coreos/etcd/clientv3"
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	helpers "github.com/felippeduran/pitaya/v2/helpers"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/helpers"
 )
 
 var etcdSDTables = []struct {

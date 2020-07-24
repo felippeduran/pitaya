@@ -31,15 +31,15 @@ import (
 	"testing"
 	"time"
 
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	helpers "github.com/felippeduran/pitaya/v2/helpers"
+	"github.com/felippeduran/pitaya/v2/networkentity/mocks"
+	protos "github.com/felippeduran/pitaya/v2/protos"
 	"github.com/golang/mock/gomock"
 	"github.com/golang/protobuf/proto"
 	"github.com/google/uuid"
 	nats "github.com/nats-io/nats.go"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/helpers"
-	"github.com/topfreegames/pitaya/networkentity/mocks"
-	"github.com/topfreegames/pitaya/protos"
 )
 
 var update = flag.Bool("update", false, "update .golden files")

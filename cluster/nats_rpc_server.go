@@ -27,16 +27,16 @@ import (
 	"math"
 	"time"
 
+	config "github.com/felippeduran/pitaya/v2/config"
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	e "github.com/felippeduran/pitaya/v2/errors"
+	logger "github.com/felippeduran/pitaya/v2/logger"
+	metrics "github.com/felippeduran/pitaya/v2/metrics"
+	protos "github.com/felippeduran/pitaya/v2/protos"
+	session "github.com/felippeduran/pitaya/v2/session"
+	util "github.com/felippeduran/pitaya/v2/util"
 	"github.com/golang/protobuf/proto"
 	nats "github.com/nats-io/nats.go"
-	"github.com/topfreegames/pitaya/config"
-	"github.com/topfreegames/pitaya/constants"
-	e "github.com/topfreegames/pitaya/errors"
-	"github.com/topfreegames/pitaya/logger"
-	"github.com/topfreegames/pitaya/metrics"
-	"github.com/topfreegames/pitaya/protos"
-	"github.com/topfreegames/pitaya/session"
-	"github.com/topfreegames/pitaya/util"
 )
 
 // NatsRPCServer struct

@@ -5,13 +5,13 @@ import (
 	"errors"
 	"testing"
 
+	cluster "github.com/felippeduran/pitaya/v2/cluster"
+	"github.com/felippeduran/pitaya/v2/cluster/mocks"
+	"github.com/felippeduran/pitaya/v2/conn/message"
+	protos "github.com/felippeduran/pitaya/v2/protos"
+	route "github.com/felippeduran/pitaya/v2/route"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/cluster"
-	"github.com/topfreegames/pitaya/cluster/mocks"
-	"github.com/topfreegames/pitaya/conn/message"
-	"github.com/topfreegames/pitaya/protos"
-	"github.com/topfreegames/pitaya/route"
 )
 
 var (

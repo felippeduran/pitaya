@@ -29,12 +29,12 @@ import (
 	"sync/atomic"
 	"time"
 
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	logger "github.com/felippeduran/pitaya/v2/logger"
+	networkentity "github.com/felippeduran/pitaya/v2/networkentity"
+	protos "github.com/felippeduran/pitaya/v2/protos"
 	"github.com/golang/protobuf/proto"
 	nats "github.com/nats-io/nats.go"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/logger"
-	"github.com/topfreegames/pitaya/networkentity"
-	"github.com/topfreegames/pitaya/protos"
 )
 
 type sessionPoolImpl struct {

@@ -25,10 +25,10 @@ import (
 	"testing"
 	"time"
 
+	metrics "github.com/felippeduran/pitaya/v2/metrics"
+	mocks "github.com/felippeduran/pitaya/v2/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/metrics"
-	"github.com/topfreegames/pitaya/mocks"
 )
 
 func TestRateLimiterGetNextMessage(t *testing.T) {

@@ -20,9 +20,7 @@
 
 package acceptorwrapper
 
-import (
-	"github.com/topfreegames/pitaya/acceptor"
-)
+import "github.com/felippeduran/pitaya/v2/acceptor"
 
 // BaseWrapper implements Wrapper by saving the acceptor as an attribute.
 // Conns from acceptor.GetConnChan are processed by wrapConn and

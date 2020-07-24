@@ -27,18 +27,18 @@ import (
 	"reflect"
 	"testing"
 
+	component "github.com/felippeduran/pitaya/v2/component"
+	"github.com/felippeduran/pitaya/v2/conn/message"
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	e "github.com/felippeduran/pitaya/v2/errors"
+	pipeline "github.com/felippeduran/pitaya/v2/pipeline"
+	"github.com/felippeduran/pitaya/v2/protos/test"
+	route "github.com/felippeduran/pitaya/v2/route"
+	"github.com/felippeduran/pitaya/v2/serialize/mocks"
+	session_mocks "github.com/felippeduran/pitaya/v2/session/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/component"
-	"github.com/topfreegames/pitaya/conn/message"
-	"github.com/topfreegames/pitaya/constants"
-	e "github.com/topfreegames/pitaya/errors"
-	"github.com/topfreegames/pitaya/pipeline"
-	"github.com/topfreegames/pitaya/protos/test"
-	"github.com/topfreegames/pitaya/route"
-	"github.com/topfreegames/pitaya/serialize/mocks"
-	session_mocks "github.com/topfreegames/pitaya/session/mocks"
 )
 
 func TestGetHandlerExists(t *testing.T) {

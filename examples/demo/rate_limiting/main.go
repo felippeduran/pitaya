@@ -6,13 +6,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/felippeduran/pitaya/v2"
+	acceptor "github.com/felippeduran/pitaya/v2/acceptor"
+	acceptorwrapper "github.com/felippeduran/pitaya/v2/acceptorwrapper"
+	component "github.com/felippeduran/pitaya/v2/component"
+	config "github.com/felippeduran/pitaya/v2/config"
+	"github.com/felippeduran/pitaya/v2/examples/demo/rate_limiting/services"
 	"github.com/spf13/viper"
-	"github.com/topfreegames/pitaya"
-	"github.com/topfreegames/pitaya/acceptor"
-	"github.com/topfreegames/pitaya/acceptorwrapper"
-	"github.com/topfreegames/pitaya/component"
-	"github.com/topfreegames/pitaya/config"
-	"github.com/topfreegames/pitaya/examples/demo/rate_limiting/services"
 )
 
 func createAcceptor(port int) acceptor.Acceptor {

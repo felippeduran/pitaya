@@ -20,9 +20,7 @@
 
 package acceptorwrapper
 
-import (
-	"github.com/topfreegames/pitaya/acceptor"
-)
+import "github.com/felippeduran/pitaya/v2/acceptor"
 
 // Wrapper has a method that receives an acceptor and the struct
 // that implements must encapsulate it. The main goal is to create

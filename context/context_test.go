@@ -28,10 +28,10 @@ import (
 	"path/filepath"
 	"testing"
 
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	helpers "github.com/felippeduran/pitaya/v2/helpers"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/helpers"
 )
 
 var update = flag.Bool("update", false, "update .golden files")

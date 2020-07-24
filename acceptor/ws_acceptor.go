@@ -27,11 +27,11 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/felippeduran/pitaya/v2/conn/codec"
+	"github.com/felippeduran/pitaya/v2/conn/packet"
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	logger "github.com/felippeduran/pitaya/v2/logger"
 	"github.com/gorilla/websocket"
-	"github.com/topfreegames/pitaya/conn/codec"
-	"github.com/topfreegames/pitaya/conn/packet"
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/logger"
 )
 
 // WSAcceptor struct

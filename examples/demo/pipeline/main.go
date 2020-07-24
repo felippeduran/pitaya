@@ -5,9 +5,9 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/topfreegames/pitaya"
-	"github.com/topfreegames/pitaya/acceptor"
-	"github.com/topfreegames/pitaya/component"
+	"github.com/felippeduran/pitaya/v2"
+	acceptor "github.com/felippeduran/pitaya/v2/acceptor"
+	component "github.com/felippeduran/pitaya/v2/component"
 )
 
 // MetagameServer ...

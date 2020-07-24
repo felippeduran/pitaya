@@ -26,9 +26,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/topfreegames/pitaya/constants"
-	"github.com/topfreegames/pitaya/helpers"
-	"github.com/topfreegames/pitaya/protos"
+	constants "github.com/felippeduran/pitaya/v2/constants"
+	helpers "github.com/felippeduran/pitaya/v2/helpers"
+	protos "github.com/felippeduran/pitaya/v2/protos"
 )
 
 var update = flag.Bool("update", false, "update .golden files")

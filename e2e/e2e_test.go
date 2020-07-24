@@ -28,12 +28,12 @@ import (
 	"testing"
 	"time"
 
+	client "github.com/felippeduran/pitaya/v2/client"
+	"github.com/felippeduran/pitaya/v2/conn/message"
+	helpers "github.com/felippeduran/pitaya/v2/helpers"
 	"github.com/google/uuid"
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/client"
-	"github.com/topfreegames/pitaya/conn/message"
-	"github.com/topfreegames/pitaya/helpers"
 )
 
 var update = flag.Bool("update", false, "update server binary")

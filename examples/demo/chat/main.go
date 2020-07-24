@@ -10,12 +10,12 @@ import (
 
 	"strings"
 
-	"github.com/topfreegames/pitaya"
-	"github.com/topfreegames/pitaya/acceptor"
-	"github.com/topfreegames/pitaya/component"
-	"github.com/topfreegames/pitaya/groups"
-	"github.com/topfreegames/pitaya/logger"
-	"github.com/topfreegames/pitaya/timer"
+	"github.com/felippeduran/pitaya/v2"
+	acceptor "github.com/felippeduran/pitaya/v2/acceptor"
+	component "github.com/felippeduran/pitaya/v2/component"
+	groups "github.com/felippeduran/pitaya/v2/groups"
+	logger "github.com/felippeduran/pitaya/v2/logger"
+	timer "github.com/felippeduran/pitaya/v2/timer"
 )
 
 type (
