@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/topfreegames/pitaya/v2/metrics/models"
+	"github.com/felippeduran/pitaya/v2/metrics/models"
 )
 
 // PitayaConfig provides configuration for a pitaya app

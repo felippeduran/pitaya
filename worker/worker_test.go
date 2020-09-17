@@ -5,10 +5,10 @@ import (
 	"errors"
 	"testing"
 
+	"github.com/felippeduran/pitaya/v2/worker/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	workers "github.com/topfreegames/go-workers"
-	"github.com/topfreegames/pitaya/v2/worker/mocks"
 )
 
 type fakeProtoMessage struct {

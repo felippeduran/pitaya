@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/felippeduran/pitaya/v2"
+	"github.com/felippeduran/pitaya/v2/component"
+	"github.com/felippeduran/pitaya/v2/examples/demo/cluster_protobuf/protos"
+	"github.com/felippeduran/pitaya/v2/timer"
 	"github.com/google/uuid"
-	"github.com/topfreegames/pitaya/v2"
-	"github.com/topfreegames/pitaya/v2/component"
-	"github.com/topfreegames/pitaya/v2/examples/demo/cluster_protobuf/protos"
-	"github.com/topfreegames/pitaya/v2/timer"
 )
 
 type (

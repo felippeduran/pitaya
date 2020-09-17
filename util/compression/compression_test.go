@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/felippeduran/pitaya/v2/helpers"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/topfreegames/pitaya/v2/helpers"
 )
 
 var update = flag.Bool("update", false, "update .golden files")

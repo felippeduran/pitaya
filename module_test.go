@@ -23,9 +23,9 @@ package pitaya
 import (
 	"testing"
 
+	"github.com/felippeduran/pitaya/v2/component"
+	"github.com/felippeduran/pitaya/v2/config"
 	"github.com/stretchr/testify/assert"
-	"github.com/topfreegames/pitaya/v2/component"
-	"github.com/topfreegames/pitaya/v2/config"
 )
 
 type MyMod struct {

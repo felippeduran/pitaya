@@ -23,8 +23,8 @@ package logger
 import (
 	"testing"
 
+	logruswrapper "github.com/felippeduran/pitaya/v2/logger/logrus"
 	"github.com/stretchr/testify/assert"
-	logruswrapper "github.com/topfreegames/pitaya/v2/logger/logrus"
 )
 
 func TestInitLogger(t *testing.T) {
